@@ -19,12 +19,12 @@ def CopyPhoto():
     ExcelMaxRow = ws.max_row
 
     #This is a list of image file extension, can be add more for all image type extension
-    FileExt = [".png", ".jpg", ".jpeg", ".bmp"]
+    FileExtList = [".png", ".jpg", ".jpeg", ".bmp"]
 
     #This is to run through all folders and subfolders in provided path
     for root, subdirs, files in os.walk(PhotoCopyPath):
         for file in files:
-            if file.endswith(tuple(FileExt)):
+            if file.endswith(tuple(FileExtList)):
                 #If file extension in the list provided, then it will split the file name and extension type
                 FileName, FileExt = os.path.splitext(file)
 
